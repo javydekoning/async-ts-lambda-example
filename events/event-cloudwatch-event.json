@@ -1,0 +1,35 @@
+{
+  "version": "0",
+  "id": "112bb628-fba4-cee2-884c-7e071d066f98",
+  "detail-type": "Config Rules Compliance Change",
+  "source": "aws.config",
+  "account": "123456789012",
+  "time": "2020-07-24T15:37:27Z",
+  "region": "eu-west-1",
+  "resources": [],
+  "detail": {
+    "resourceId": "sg-1234567890abcdefg",
+    "awsRegion": "eu-west-1",
+    "awsAccountId": "123456789012",
+    "configRuleName": "ec2-security-group-attached-to-eni",
+    "recordVersion": "1.0",
+    "configRuleARN": "arn:aws:config:eu-west-1:123456789012:config-rule/config-rule-b0bcqb",
+    "messageType": "ComplianceChangeNotification",
+    "newEvaluationResult": {
+      "evaluationResultIdentifier": {
+        "evaluationResultQualifier": {
+          "configRuleName": "ec2-security-group-attached-to-eni",
+          "resourceType": "AWS::EC2::SecurityGroup",
+          "resourceId": "sg-1234567890abcdefg"
+        },
+        "orderingTimestamp": "2020-07-24T15:37:19.540Z"
+      },
+      "complianceType": "NON_COMPLIANT",
+      "resultRecordedTime": "2020-07-24T15:37:26.951Z",
+      "configRuleInvokedTime": "2020-07-24T15:37:26.792Z",
+      "annotation": "This Amazon EC2 security group is not associated with an EC2 instance or an ENI."
+    },
+    "notificationCreationTime": "2020-07-24T15:37:27.672Z",
+    "resourceType": "AWS::EC2::SecurityGroup"
+  }
+}
