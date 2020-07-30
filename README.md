@@ -11,6 +11,8 @@ sam build
 sam local invoke -e events/event-cloudwatch-event.json handler --skip-pull-image
 ```
 
+## Code example
+
 ```ts
 import { Context } from 'aws-lambda';
 
@@ -36,6 +38,12 @@ exports.handler = async (event: any, context: Context) => {
   console.info('Completed!.');
 };
 ```
+
+## Output
+
+Note how the first block (without the per line `await`), executes roughly in parralel at `07:52:01.96`. The second block, which awaits (thus pauzes) for every line, takes two seconds per line.
+
+The first example is useful when you need to perform multiple actions in parralel, for example gathering data from DynamoDB and s3.
 
 ```log
 START RequestId: 829cae73-7e31-1f18-5086-cc7dd1bb586a Version: $LATEST
